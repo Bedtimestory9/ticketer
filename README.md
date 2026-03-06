@@ -1,21 +1,48 @@
-# Ticketer
+## Install Erlang/Elixir
+install Elixir/Erlang, reference: `https://elixir-lang.org/install.html`
 
-**TODO: Add description**
+- MacOS:
+  `brew install elixir`
 
-## Installation
+- Windows: download and install
+1. `www.erlang.org/downloads.html`
+2. click on "Download Windows installer"
+3. run the Erlang installer
+4. download Elixir installer: `https://github.com/elixir-lang/elixir/releases/download/v1.19.5/elixir-otp-28.exe`
+5. run Elixir installer
+6. check running `iex` if the command works, if not might need a restart
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `ticketer` to your list of dependencies in `mix.exs`:
+- or use Bash, for Windows/ MacOS /Linux
 
-```elixir
-def deps do
-  [
-    {:ticketer, "~> 0.1.0"}
-  ]
-end
+```bash
+curl -fsSO https://elixir-lang.org/install.sh
+sh install.sh elixir@1.19.5 otp@28.1
+installs_dir=$HOME/.elixir-install/installs
+export PATH=$installs_dir/otp/28.1/bin:$PATH
+export PATH=$installs_dir/elixir/1.19.5-otp-28/bin:$PATH
+iex
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/ticketer>.
+## Run program
 
+clone repo: `https://gitee.com/lawrence-su_1_0/ticketer.git`
+
+at root directory, run (bash):
+```bash
+mix deps.get
+```
+
+and then run
+
+```bash
+mix escript.build
+```
+
+then run 
+```bash
+./ticketer create "new test ticket"
+```
+
+```bash
+./ticketer ls -a
+```
